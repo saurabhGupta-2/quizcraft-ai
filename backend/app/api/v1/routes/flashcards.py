@@ -15,6 +15,7 @@ class FlashcardReview(BaseModel):
 
 
 @router.post("/review")
+@router.post("/review/")
 async def review_flashcard(
     review: FlashcardReview,
     user_id: str = Depends(get_current_user_id)
