@@ -5,8 +5,8 @@
     "watchPatterns": ["/backend/**"]
   },
   "deploy": {
-    "startCommand": "gunicorn app.main:app --workers 1 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:$PORT",
-    "healthcheckPath": "/",
+    "startCommand": "sh -c 'gunicorn app.main:app --workers 1 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:$PORT'",
+    "healthcheckPath": "/health",
     "healthcheckTimeout": 600,
     "restartPolicyType": "ON_FAILURE"
   }
