@@ -117,6 +117,7 @@ async def logout(
     return # Return no content on success
 
 @router.get("/me", response_model=UserResponse)
+@router.get("/me/", response_model=UserResponse, include_in_schema=False)
 async def get_current_user_profile(
     user: dict = Depends(get_current_user) # Use dependency that gets the full user profile
 ):
